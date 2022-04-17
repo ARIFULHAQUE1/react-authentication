@@ -3,9 +3,9 @@ import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 
 const Header = () => {
       return (
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar collapseOnSelect expand="lg" bg="white" variant="white">
             <Container>
-            <Navbar.Brand href="#home"><img src="https://img.freepik.com/free-vector/red-heart-with-heartbeat-line-medical-background_1017-26835.jpg?size=626&ext=jpg&ga=GA1.2.1652170954.1649070937" height={50} alt="" /></Navbar.Brand>
+            <Navbar.Brand href="#home">The Health Care</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">
