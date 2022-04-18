@@ -2,30 +2,29 @@ import React from 'react';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { faStethoscope } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
 const Header = () => {
       return (
-            <Navbar collapseOnSelect expand="lg" bg="white" variant="white">
-            <Container>
-            <Navbar.Brand href="#home"> <FontAwesomeIcon className='text-danger' icon={faStethoscope}></FontAwesomeIcon> The Health Care</Navbar.Brand>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav">
-              <Nav className="me-auto">
-                <Nav.Link href="#features">Service</Nav.Link>
-                <Nav.Link href="#pricing">Blog</Nav.Link>
-                <NavDropdown title="Service" id="collasible-nav-dropdown">
-                  <NavDropdown.Item href="#action/3.1">Baby Care</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2">Mother Care</NavDropdown.Item>
-                </NavDropdown>
-              </Nav>
-              <Nav>
-                <Nav.Link href="#deets">About</Nav.Link>
-                <Nav.Link eventKey={2} href="#memes" className='text-danger'>
-                  Login
-                </Nav.Link>
-              </Nav>
-            </Navbar.Collapse>
-            </Container>
-          </Navbar>
+           
+        <Navbar collapseOnSelect expand="lg" bg="white" variant="light">
+        <Container>
+        <Navbar.Brand as={Link}to='hospital'><FontAwesomeIcon className='text-danger' icon={faStethoscope}></FontAwesomeIcon> <span className='text-primary'>The Health Care</span></Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link as={Link}to='blog'><span className='text-primary'>Blog</span></Nav.Link>
+            <Nav.Link as={Link}to='service'><span className='text-primary'>Service</span></Nav.Link>
+          </Nav>
+          <Nav>
+            <Nav.Link as={Link}to='about'><span className='text-primary'>About</span></Nav.Link>
+            <Nav.Link eventKey={2} as={Link}to='login'>
+            <span className='text-danger'>Login</span>
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+        </Container>
+      </Navbar>
+          
       );
 };
 

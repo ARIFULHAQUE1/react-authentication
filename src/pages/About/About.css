@@ -1,0 +1,9 @@
+.photo{
+      width: 300px;
+      border: 1px solid white;
+      border-radius: 10px;
+ align-content: center;
+}
+.photo img{
+      width:100%;
+}
