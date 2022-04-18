@@ -1,6 +1,8 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
 import Information from '../Information/Information';
+import Service from '../Service/Service';
+import Services from '../Services/Services';
 
 const Home = () => {
       return (
@@ -45,9 +47,18 @@ const Home = () => {
                               </Carousel.Item>
                         </Carousel>
                   </div>
-            
+         
+          <div className='w-25 mx-auto mb-5 mt-5'>
+         <h4 className='text-primary text-center mb-2'>Qualifications</h4>
+          <div className='border border-danger w-100 '></div>
+         
+          </div>
                   <Information></Information>
+                  <div className='mt-5 mb-5'>
+                        <Services></Services>
+                  </div>
             </div>
+
       )
 
 };
