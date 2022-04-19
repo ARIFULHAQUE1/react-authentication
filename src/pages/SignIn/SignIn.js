@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import LogWay from '../Login/LogWay/LogWay';
-import email from '../../photo/email.png'
+import emailLogo  from '../../photo/emailLogo.png'
 import auth from '../firebase.int';
 import { useAuthState, useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 const SignIn = () => {
@@ -31,20 +31,25 @@ const SignIn = () => {
   const handleSubmit=(event)=>{
     event.preventDefault();
     createUserWithEmailAndPassword(email,password,confrimPassword);
+    // const password=event.target.value;
+    // const ConfrimPassword=event.target.value;
+    // if(password ==! confrimPassword){
+    //   return
+    // }
+    
   }
   if(user){
     navigate('/appointment')
   }
-  if (loading) {
-    loadingElement=<p>Loading...</p>;
-  }
-
+ 
+ 
   if (error) {
     errorElement=
         <p>Error: {error.message}</p>
   }
   return (
     <div className='mx-auto w-50'>
+      <h4 className='text-center text-primary m-3'>Please SignUp</h4>
       <form onSubmit={handleSubmit}>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Email address</label>
@@ -63,8 +68,9 @@ const SignIn = () => {
           <input type="checkbox" class="form-check-input" id="exampleCheck1" />
           <label class="form-check-label" for="exampleCheck1" required>Accept terms & condition</label>
         </div>
+        {errorElement}
         <div>
-          <button  className='fw-bold btn btn-white w-50 border-primary border-2 bold d-block mx-auto'><img src={email} height={30} alt="" /><span className='px-2 fw-bold'>Register </span></button>
+          <button  className='fw-bold btn btn-white w-50 border-primary border-2 bold d-block mx-auto'><img src={emailLogo } height={30} alt="" /><span className='px-2 fw-bold'>Email</span></button>
         </div>
       </form>
       <LogWay></LogWay>
@@ -72,8 +78,8 @@ const SignIn = () => {
         <span className='text-primary'>Already have an Account</span>  ?
 
         <Link className='text-danger px-2' to='/login'>LogIn</Link>
-        {errorElement}
-        {loadingElement}
+        
+      
       </p>
     </div>
   );

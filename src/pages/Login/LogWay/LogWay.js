@@ -3,11 +3,12 @@ import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.int';
 import google from '../../../photo/google.jpg'
-// import email from '../../../photo/email.png'
+
 const LogWay = () => {
       const navigate= useNavigate()
       let errorElement;
       const [signInWithGoogle,user,loading,error]=useSignInWithGoogle(auth);
+   
       if(error){
         
             errorElement= <div>
@@ -16,7 +17,7 @@ const LogWay = () => {
             
       }
       if(user){
-            navigate('/home')
+            navigate('/appointment')
       }
       return (
             <div className='mt-2 x'>

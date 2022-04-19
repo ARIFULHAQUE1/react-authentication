@@ -29,7 +29,7 @@ const Login = () => {
 
   const handleLogin=(event)=>{
     event.preventDefault()
-    signInWithEmailAndPassword()
+    signInWithEmailAndPassword(email,password)
   }
   if(user){
     navigate(from, { replace: true });
@@ -65,9 +65,9 @@ const Login = () => {
           
         </form>
         <p className='text-center'> 
-            <span className='text-primary'> Create an Account  </span>
+            <span className='text-primary'>Don't Have Account</span>
            ? 
-            <Link className=' px-2 text-danger' to='/signIn'>Please SignIn</Link>
+            <Link className=' px-2 text-danger' to='/signIn'>SignIn</Link>
             {loadingElement}
             {errorElement}
           </p>

@@ -14,8 +14,8 @@ const Information = () => {
 
                   <div className='col-xl-4'>
                    <FontAwesomeIcon className='text-primary crownIcon' icon={faGraduationCap}></FontAwesomeIcon>
-                        <div className='border border-primary mb-1 mt-1'></div>
-                        <div className='border border-primary'></div>
+                        <div className=' border border-primary mb-1 mt-1'></div>
+                        
                         <div>
                         <h4 className='text-primary text-center'>Medical education</h4>
                         <p className='tex-center'> Im Graduated From sir Solimullah Medical Collage . This is My Dream To Bea Doctor and Help The People. I Was Complited My PHD From United America Medical Research Center </p>
@@ -25,7 +25,7 @@ const Information = () => {
                   <FontAwesomeIcon className='text-primary crownIcon' icon={faCrown}>
                         </FontAwesomeIcon>
                         <div className='border border-primary mb-1 mt-1'></div>
-                        <div className='border border-primary'> </div>
+                       
                        <div>
                        <h4 className='text-primary text-center'>Medical professionals</h4>
                         <p className='tex-center'> My First Profession is Start in Appolo international Hospital. This is My Dream To Bea Doctor and Help The People. Now im Head Of Doctor at Ibna Sina Medical Hall. </p>
@@ -38,7 +38,7 @@ const Information = () => {
                   <FontAwesomeIcon className='text-primary crownIcon' icon={faVial}>
                         </FontAwesomeIcon>
                         <div className='border border-primary mb-1 mt-1'></div>
-                        <div className='border border-primary'></div>
+                       
                    <div>
                    <h4 className='text-primary text-center'>Research</h4>
                         <p className='tex-center'> I Complete many of Reseach When im at America  . Im Created Covid-Vax . Many of Research are fail but my Best Research About Corona Virus. </p>
