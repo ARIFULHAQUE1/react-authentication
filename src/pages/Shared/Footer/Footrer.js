@@ -5,9 +5,11 @@ const Footrer = () => {
       const today = new Date()
       const year = today.getFullYear()
       return (
-          <footer className='mb-0'>
-                <p className='text-center  flex'><FontAwesomeIcon className='me-2 text-danger ' icon={faCopyright}></FontAwesomeIcon>Copy Rights reserved | <span className='text-primary'>{year}</span></p>
+       
+                <footer style={{height:'100px'}} className='align-text-bottom bg-primary '>
+                <p className='text-center  flex text-white'><span className='text-black'><FontAwesomeIcon className='me-1' icon={faCopyright}></FontAwesomeIcon></span> Copy Rights reserved | <span className='text-white'>{year}</span></p>
           </footer>
+       
       );
 };
 
