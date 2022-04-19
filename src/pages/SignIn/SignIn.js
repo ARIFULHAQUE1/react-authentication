@@ -4,6 +4,7 @@ import LogWay from '../Login/LogWay/LogWay';
 import emailLogo  from '../../photo/emailLogo.png'
 import auth from '../firebase.int';
 import { useAuthState, useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { sendEmailVerification } from 'firebase/auth';
 const SignIn = () => {
   const navigate= useNavigate();
   const [email, setEmail] = useState('');
@@ -16,7 +17,7 @@ const SignIn = () => {
     user,
     error,
     loading,
-  ] = useCreateUserWithEmailAndPassword(auth);
+  ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true});
 
   const handleEmail=(event)=>{
    setEmail(event.target.value);
@@ -31,13 +32,9 @@ const SignIn = () => {
   const handleSubmit=(event)=>{
     event.preventDefault();
     createUserWithEmailAndPassword(email,password,confrimPassword);
-    // const password=event.target.value;
-    // const ConfrimPassword=event.target.value;
-    // if(password ==! confrimPassword){
-    //   return
-    // }
-    
+  
   }
+
   if(user){
     navigate('/appointment')
   }
@@ -70,7 +67,7 @@ const SignIn = () => {
         </div>
         {errorElement}
         <div>
-          <button  className='fw-bold btn btn-white w-50 border-primary border-2 bold d-block mx-auto'><img src={emailLogo } height={30} alt="" /><span className='px-2 fw-bold'>Email</span></button>
+          <button className='fw-bold btn btn-white w-50 border-primary border-2 bold d-block mx-auto'><img src={emailLogo } height={30} alt="" /><span className='px-2 fw-bold'>Email</span></button>
         </div>
       </form>
       <LogWay></LogWay>

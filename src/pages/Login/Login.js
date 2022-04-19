@@ -1,4 +1,5 @@
 
+import { sendEmailVerification, sendPasswordResetEmail } from 'firebase/auth';
 import React, { useState } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -29,7 +30,15 @@ const Login = () => {
 
   const handleLogin=(event)=>{
     event.preventDefault()
-    signInWithEmailAndPassword(email,password)
+    signInWithEmailAndPassword(email,password);
+    verifyEmail()
+
+  }
+  const verifyEmail=()=>{
+    sendEmailVerification(auth.currentUser)
+ .then(()=>{
+   console.log('sent Email')
+ })
   }
   if(user){
     navigate(from, { replace: true });
@@ -44,7 +53,12 @@ const Login = () => {
     errorElement=
         <p>Error: {error.message}</p>
   }
- 
+  const resetPassword=()=>{
+    sendPasswordResetEmail(auth,email)
+    .then(()=>{
+      console.log('password sent')
+    })
+  }
   return (
     <div className='mb-5'>
       <h4 className='text-primary text-center'>Login</h4>
@@ -64,6 +78,7 @@ const Login = () => {
           </div>
           
         </form>
+        <button onClick={resetPassword} className='text-primary bg-white w-50 mx-auto d-block border-0' variant="Link">Forget Password ? </button>
         <p className='text-center'> 
             <span className='text-primary'>Don't Have Account</span>
            ? 
