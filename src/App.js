@@ -8,11 +8,11 @@ import Blog from './pages/Blog/Blog';
 import About from './pages/About/About';
 import Services from './pages/Services/Services';
 import Login from './pages/Login/Login';
-
 import NotFound from './pages/NotFound/NotFound';
 import Appointment from './pages/Appointment/Appointment';
 import RequireAuth from './pages/RequireAuth/RequireAuth';
 import SignIn from './pages/SignIn/SignIn';
+
 
 function App() {
   return (

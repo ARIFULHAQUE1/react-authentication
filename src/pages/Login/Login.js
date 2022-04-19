@@ -5,7 +5,8 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../firebase.int';
 import LogWay from './LogWay/LogWay';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -56,7 +57,8 @@ const Login = () => {
   const resetPassword=()=>{
     sendPasswordResetEmail(auth,email)
     .then(()=>{
-      console.log('password sent')
+      toast('password sent')
+
     })
   }
   return (
@@ -78,7 +80,7 @@ const Login = () => {
           </div>
           
         </form>
-        <button onClick={resetPassword} className='text-primary bg-white w-50 mx-auto d-block border-0' variant="Link">Forget Password ? </button>
+        <button onClick={resetPassword} className='text-primary bg-white w-50 mx-auto d-block border-0' >Forget Password ? </button>
         <p className='text-center'> 
             <span className='text-primary'>Don't Have Account</span>
            ? 
@@ -86,7 +88,7 @@ const Login = () => {
             {loadingElement}
             {errorElement}
           </p>
-         
+          <ToastContainer />
       </div>
     </div>
   );
